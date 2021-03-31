@@ -6,8 +6,8 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IColorDal:IEntityRepository<Color>
+    public interface ICustomerDal:IEntityRepository<Customer>
     {
-        List<ColorDetailDto> GetColorDetail();
+        List<CustomerDetailDto> GetCustomerDetail();
     }
 }
