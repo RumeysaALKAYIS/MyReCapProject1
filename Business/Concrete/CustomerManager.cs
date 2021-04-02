@@ -38,8 +38,13 @@ namespace Business.Concrete
 
         public IDataResult<List<CustomerDetailDto>> GetCustomerDetail()
         {
-            return new SuccessDataResult<List<CustomerDetailDto>>(_customerDal.GetCustomerDetail());
+            throw new NotImplementedException();
         }
+
+        //public IDataResult<List<CustomerDetailDto>> GetCustomerDetail()
+        //{
+        //    return new SuccessDataResult<List<CustomerDetailDto>>(_customerDal.GetCustomerDetail());
+        //}
 
         public IResult Update(Customer customer)
         {
