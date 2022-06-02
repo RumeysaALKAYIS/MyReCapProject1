@@ -34,7 +34,7 @@ namespace Core.Utilities.Helpers.FileHelpers
 
        
 
-        public IResult Ubadte(IFormFile formFile, string filepath, string root)
+        public IResult Update(IFormFile formFile, string filepath)
         {
             var guidName = Guid.NewGuid().ToString();
             var filetype = Path.GetExtension(formFile.FileName);
