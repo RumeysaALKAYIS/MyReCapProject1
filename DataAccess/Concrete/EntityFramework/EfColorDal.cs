@@ -26,7 +26,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  ColorId = co.ColorId,
                                  ColorName=co.ColorName,
                                  Descriptions=c.Descriptions,
-                                 ModelYear=c.ModelYear
+                                 //ModelYear=Convert.ToInt38( c.ModelYear)
                              };
                 return result.ToList();
 

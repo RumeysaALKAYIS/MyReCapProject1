@@ -17,7 +17,7 @@ namespace ConsoleUI
             //AddTest();
             //Car car = new Car { CarId=10,CarName = "Passat", ModelYear = 2012, DailyPrice =1200 , Descriptions = "Fıstık Gibi Araba", BrandId = 2, ColorId = 3 };
             //UpdateTest(car);
-            Car car = new Car { ModelYear= 2012, CarName = "Strogen",};
+            Car car = new Car { ModelYear= "2012", CarName = "Strogen",};
             UpdateTest(car);
             //DeleteTest(car);
             CarTest();
@@ -36,7 +36,7 @@ namespace ConsoleUI
         private static void AddTest()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            Car car = new Car {  CarName = "Passat", ModelYear = 2012, DailyPrice = 25000, Descriptions = "Fıstık Gibi Araba" ,BrandId=2,ColorId=2};
+            Car car = new Car {  CarName = "Passat", ModelYear = "2012", DailyPrice = 25000, Descriptions = "Fıstık Gibi Araba" ,BrandId=2,ColorId=2};
             carManager.Add(car);
         }
         private static void CarDetailTes()
