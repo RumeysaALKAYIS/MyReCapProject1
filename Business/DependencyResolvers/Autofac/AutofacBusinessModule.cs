@@ -4,6 +4,7 @@ using Business.Abstract;
 using Business.Concrete;
 using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
+using Core.Utilities.Security.Jwt;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using System;
@@ -16,17 +17,22 @@ namespace Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
-            //CarsContreller
+            
             builder.RegisterType<CarManager>().As<ICarService>();
             builder.RegisterType<EfCarDal>().As<ICarDal>();
 
-            //BrandsContreller
             builder.RegisterType<BrandManager>().As<IBrandService>();
             builder.RegisterType<EfBrandDal>().As<IBrandDal>();
 
-            //ColorsContreller
             builder.RegisterType<ColorManager>().As<IColorService>();
             builder.RegisterType<EfColorDal>().As<IColorDal>();
+
+            builder.RegisterType<UserManager>().As<IUserService>();
+            builder.RegisterType<EfUserDal>().As<IUserDal>();
+
+            builder.RegisterType<AuthManager>().As<IAuthService>();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>();
+
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
@@ -34,6 +40,7 @@ namespace Business.DependencyResolvers.Autofac
                 {
                     Selector = new AspectInterceptorSelector()
                 }).SingleInstance();
+
         }
     }
 }

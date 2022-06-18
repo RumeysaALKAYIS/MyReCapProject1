@@ -22,21 +22,21 @@ namespace Business.Concrete
         {
             if (color.ColorId==0)
             {
-                return new ErrorResult(Mesages.NotAdded);
+                return new ErrorResult(Messages.NotAdded);
             }
             _icolorDal.Add(color);
-            return new SuccessResult(Mesages.Added);
+            return new SuccessResult(Messages.Added);
         }
 
         public IResult Deleted(Color color)
         {
             _icolorDal.Delete(color);
-            return new SuccessResult(Mesages.Deleted);
+            return new SuccessResult(Messages.Deleted);
         }
 
         public IDataResult<List<Color>> GetAll()
         {
-            return new SuccessDataResult<List<Color>>(_icolorDal.GetAll(),Mesages.Listed);
+            return new SuccessDataResult<List<Color>>(_icolorDal.GetAll(),Messages.Listed);
         }
 
         public IDataResult<List<Color>> GetAllByColorId(int id)

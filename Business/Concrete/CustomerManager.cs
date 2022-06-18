@@ -22,13 +22,13 @@ namespace Business.Concrete
         public IResult Add(Customer customer)
         {
             _customerDal.Add(customer);
-            return new SuccessResult(Mesages.Added);
+            return new SuccessResult(Messages.Added);
         }
 
         public IResult Delete(Customer customer)
         {
             _customerDal.Delete(customer);
-            return new SuccessResult(Mesages.Deleted);
+            return new SuccessResult(Messages.Deleted);
         }
 
         public IDataResult<Customer> GetByCustomerId(int customerId)
@@ -50,10 +50,10 @@ namespace Business.Concrete
         {
             if (customer.CustomerId==0)
             {
-                return new ErrorResult(Mesages.NotUpdated);
+                return new ErrorResult(Messages.NotUpdated);
             }
             _customerDal.Update(customer);
-            return new SuccessResult(Mesages.Updated);
+            return new SuccessResult(Messages.Updated);
         }
     }
 }

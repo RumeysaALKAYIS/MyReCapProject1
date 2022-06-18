@@ -22,18 +22,18 @@ namespace Business.Concrete
         public IResult Add(Brand brand)
         {
             _brandDal.Add(brand);
-            return  new SuccessResult( Mesages.Added);
+            return  new SuccessResult( Messages.Added);
         }
 
         public IResult Delete(Brand brand)
         {
             _brandDal.Delete(brand);
-            return new SuccessResult(Mesages.Deleted);
+            return new SuccessResult(Messages.Deleted);
         }
 
         public IDataResult<List<Brand>> GetAll()
         {
-            return new SuccessDataResult<List<Brand>>(_brandDal.GetAll(),Mesages.Listed);
+            return new SuccessDataResult<List<Brand>>(_brandDal.GetAll(),Messages.Listed);
         }
 
         public IDataResult<List<BrandDetailDto>> GetBrandDetail()
@@ -45,10 +45,10 @@ namespace Business.Concrete
         {
             if (brand.BrandId==0)
             {
-                return new ErrorResult(Mesages.NotUpdated);
+                return new ErrorResult(Messages.NotUpdated);
             }
             _brandDal.Update(brand);
-            return new SuccessResult(Mesages.Updated);
+            return new SuccessResult(Messages.Updated);
         }
     }
 }
